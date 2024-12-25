@@ -1,0 +1,283 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\84974> git --version
+git version 2.44.0.windows.1
+PS C:\Users\84974> git config --global user.name "nguyenkien"
+PS C:\Users\84974> git config --global user.email "kienn2245@gmail.com"
+PS C:\Users\84974> git config --global user.name "KienNguyenk64"
+PS C:\Users\84974> mkdir myproject
+
+
+    Directory: C:\Users\84974
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        12/24/2024  11:06 PM                myproject
+
+
+PS C:\Users\84974> cd myproject
+PS C:\Users\84974\myproject> git init
+Initialized empty Git repository in C:/Users/84974/myproject/.git/
+PS C:\Users\84974\myproject> ls
+
+
+    Directory: C:\Users\84974\myproject
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        12/24/2024  11:13 PM            173 index.html
+
+
+PS C:\Users\84974\myproject> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\84974\myproject> git add index.html
+PS C:\Users\84974\myproject> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+PS C:\Users\84974\myproject> git add --all
+PS C:\Users\84974\myproject> commit -m "First release of Hello World!"
+commit : The term 'commit' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ commit -m "First release of Hello World!"
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (commit:String) [], CommandN
+   otFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\84974\myproject> git  commit -m "First release of Hello World!"
+[master (root-commit) 391fe78] First release of Hello World!
+ 3 files changed, 26 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 bluestyle.css
+ create mode 100644 index.html
+PS C:\Users\84974\myproject> git status --short
+ M index.html
+PS C:\Users\84974\myproject> git commit -a -m "Update index.html with a new line"
+[master b3d3db6] Update index.html with a new line
+ 1 file changed, 1 insertion(+)
+PS C:\Users\84974\myproject> git log
+commit b3d3db6e4fc136d7c350d0d14da48c857854ab57 (HEAD -> master)
+Author: KienNguyenk64 <kienn2245@gmail.com>
+Date:   Tue Dec 24 23:28:29 2024 +0700
+
+    Update index.html with a new line
+
+commit 391fe78965d3b58e3d9d33cc7c7aa2f9572909af
+Author: KienNguyenk64 <kienn2245@gmail.com>
+Date:   Tue Dec 24 23:24:52 2024 +0700
+
+    First release of Hello World!
+PS C:\Users\84974\myproject> git command -help
+git: 'command' is not a git command. See 'git --help'.
+PS C:\Users\84974\myproject> git --help
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)                             clone     Clone a repository into a new directory                           init      Create an empty Git repository or reinitialize an existing one                                                                             work on the current change (see also: git help everyday)                       add       Add file contents to the index                                    mv        Move or rename a file, a directory, or a symlink                  restore   Restore working tree files                                        rm        Remove files from the working tree and from the index                                                                                      examine the history and state (see also: git help revisions)                   bisect    Use binary search to find the commit that introduced a bug                                                                                    diff      Show changes between commits, commit and working tree, etc        grep      Print lines matching a pattern                                    log       Show commit logs                                                  show      Show various types of objects                                     status    Show the working tree status                                   grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+PS C:\Users\84974\myproject> help --all
+Get-Help : Get-Help could not find --all in a help file in this session.
+To download updated help topics type: "Update-Help". To get help online,
+search for the help topic in the TechNet library at
+https:/go.microsoft.com/fwlink/?LinkID=107116.
+At line:55 char:5
++     Get-Help @PSBoundParameters | more
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Get-Help], HelpNot
+   FoundException
+    + FullyQualifiedErrorId : HelpNotFound,Microsoft.PowerShell.Commands.G
+   etHelpCommand
+
+
+PS C:\Users\84974\myproject> git help --all
+See 'git help <command>' to read about a specific subcommand
+
+Main Porcelain Commands
+   add                     Add file contents to the index
+   am                      Apply a series of patches from a mailbox
+   archive                 Create an archive of files from a named tree
+   bisect                  Use binary search to find the commit that introduced a bug
+   branch                  List, create, or delete branches
+   bundle                  Move objects and refs by archive
+   checkout                Switch branches or restore working tree files
+   cherry-pick             Apply the changes introduced by some existing commits
+   citool                  Graphical alternative to git-commit
+   clean                   Remove untracked files from the working tree
+   clone                   Clone a repository into a new directory
+   commit                  Record changes to the repository
+   describe                Give an object a human readable name based on an available ref
+   diff                    Show changes between commits, commit and working tree, etc
+   fetch                   Download objects and refs from another repository
+   format-patch            Prepare patches for e-mail submission
+   gc                      Cleanup unnecessary files and optimize the local repository
+   gitk                    The Git repository browser
+   grep                    Print lines matching a pattern
+   gui                     A portable graphical interface to Git
+   init                    Create an empty Git repository or reinitialize an existing one
+   log                     Show commit logs
+   maintenance             Run tasks to optimize Git repository data
+   merge                   Join two or more development histories together
+   mv                      Move or rename a file, a directory, or a symlink
+   notes                   Add or inspect object notes
+   pull                    Fetch from and integrate with another repository or a local branch
+   push                    Update remote refs along with associated objects
+   range-diff              Compare two commit ranges (e.g. two versions of a branch)
+:
+See 'git help <command>' to read about a specific subcommand
+
+Main Porcelain Commands
+   add                     Add file contents to the index
+   am                      Apply a series of patches from a mailbox
+   archive                 Create an archive of files from a named tree
+   bisect                  Use binary search to find the commit that introduced a bug
+   branch                  List, create, or delete branches
+   bundle                  Move objects and refs by archive
+   checkout                Switch branches or restore working tree files
+   cherry-pick             Apply the changes introduced by some existing commits
+   citool                  Graphical alternative to git-commit
+   clean                   Remove untracked files from the working tree
+   clone                   Clone a repository into a new directory
+   commit                  Record changes to the repository
+   describe                Give an object a human readable name based on an available ref
+   diff                    Show changes between commits, commit and working tree, etc
+   fetch                   Download objects and refs from another repository
+   format-patch            Prepare patches for e-mail submission
+   gc                      Cleanup unnecessary files and optimize the local repository
+   gitk                    The Git repository browser
+   grep                    Print lines matching a pattern
+   gui                     A portable graphical interface to Git
+   init                    Create an empty Git repository or reinitialize an existing one
+   log                     Show commit logs
+   maintenance             Run tasks to optimize Git repository data
+   merge                   Join two or more development histories together
+   mv                      Move or rename a file, a directory, or a symlink
+   notes                   Add or inspect object notes
+   pull                    Fetch from and integrate with another repository or a local branch
+   push                    Update remote refs along with associated objects
+   range-diff              Compare two commit ranges (e.g. two versions of a branch)
+PS C:\Users\84974\myproject> git branch hello-world-images
+PS C:\Users\84974\myproject> git branch
+  hello-world-images
+* master
+PS C:\Users\84974\myproject> git checkout hello-world-images
+Switched to branch 'hello-world-images'
+PS C:\Users\84974\myproject> git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\84974\myproject> git add --all
+PS C:\Users\84974\myproject> git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+PS C:\Users\84974\myproject> git add --all
+PS C:\Users\84974\myproject> git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   img_hello_world.jpg
+        modified:   index.html
+
+PS C:\Users\84974\myproject> git commit -m "Added image to Hello World"
+[hello-world-images f0d73bc] Added image to Hello World
+ 2 files changed, 2 insertions(+)
+ create mode 100644 img_hello_world.jpg
+PS C:\Users\84974\myproject> ls
+
+
+    Directory: C:\Users\84974\myproject
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        12/24/2024  11:21 PM             84 bluestyle.css
+-a----        12/24/2024  11:51 PM         325689 img_hello_world.jpg
+-a----        12/24/2024  11:45 PM            360 index.html
+-a----        12/24/2024  11:21 PM            192 README.md
+
+
+PS C:\Users\84974\myproject> git checkout master
+Switched to branch 'master'
+PS C:\Users\84974\myproject> ls
+
+
+    Directory: C:\Users\84974\myproject
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        12/24/2024  11:21 PM             84 bluestyle.css
+-a----        12/24/2024  11:54 PM            251 index.html
+-a----        12/24/2024  11:21 PM            192 README.md
+
+
+PS C:\Users\84974\myproject> git checkout -b emergency-fix
+Switched to a new branch 'emergency-fix'
+PS C:\Users\84974\myproject> git status
+On branch emergency-fix
+nothing to commit, working tree clean
+PS C:\Users\84974\myproject> git status
+On branch emergency-fix
+nothing to commit, working tree clean
+PS C:\Users\84974\myproject> git status
+On branch emergency-fix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\84974\myproject> git add index.html
+PS C:\Users\84974\myproject> git commit -m "updated index.html with emergency fix"
+[emergency-fix 2b3c145] updated index.html with emergency fix
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\84974\myproject>
